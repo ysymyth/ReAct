@@ -3,9 +3,9 @@
 GPT-3 prompting code for **ReAct: Synergizing Reasoning and Acting in Language Models**.
 
 ## Setup
-You need to first have a OpenAI API key and store it in the environment variable ``OPENAI_API_KEY`` (see [here](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety)).
+You need to first have an OpenAI API key and store it in the environment variable ``OPENAI_API_KEY`` (see [here](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety)).
 
-Package requirement: openai, and install alfworld following instructions [here](https://github.com/alfworld/alfworld).
+Package requirement: ``openai``, and install ``alfworld`` following instructions [here](https://github.com/alfworld/alfworld).
 
 ## Experiments
 Run ``hotpotqa.ipynb`` and ``alfworld.ipynb``. FEVER and WebShop code will be added soon.
