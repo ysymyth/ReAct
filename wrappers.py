@@ -4,7 +4,6 @@ import gym
 import numpy as np
 import re
 import string
-from Levenshtein import StringMatcher
 from collections import Counter
 
     
@@ -111,18 +110,17 @@ class HotPotQAWrapper(gym.Wrapper):
     if info['answer'] is not None:
       pred = normalize_answer(self.data[self.data_idx][1])
       gt = normalize_answer(info['answer'])
-      score = StringMatcher.StringMatcher(seq1=pred, seq2=gt).ratio()
-      return int(score > 0.633)
+      score = (pred == gt)
+      return int(score)
     return 0
   
   def get_metrics(self, info):
     if info['answer'] is not None:
       pred = normalize_answer(self.data[self.data_idx][1])
       gt = normalize_answer(info['answer'])
-      score = StringMatcher.StringMatcher(seq1=pred, seq2=gt).ratio()
       em = (pred == gt)
       f1 = f1_score(pred, gt)[0]
-      return {'reward': int(score > 0.633), 'em': em, 'f1': f1}
+      return {'reward': em, 'em': em, 'f1': f1}
     return {'reward': 0, 'em': 0, 'f1': 0}
 
   def step(self, action):
