@@ -2,6 +2,8 @@
 
 GPT-3 prompting code for ICLR 2023 paper [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629).
 
+To use ReAct for more tasks, consider trying [LangChain's zero-shot ReAct Agent](https://python.langchain.com/docs/modules/agents/agent_types/react.html).
+
 ## Setup
 You need to first have an OpenAI API key and store it in the environment variable ``OPENAI_API_KEY`` (see [here](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety)).
 
